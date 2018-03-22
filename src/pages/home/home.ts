@@ -11,4 +11,17 @@ export class HomePage {
 
   }
 
+  loginAndRegister(){
+    alert("Login clicked!");
+  }
+
+
+  photos(){
+    alert("Fotos clicked!");
+  }
+
+
+  maps(){
+    alert("Mapas clicked!");
+  }
 }

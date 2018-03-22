@@ -8,7 +8,7 @@
 
 <ion-content padding>
   Seleccione una opción. <br><br>
-  <button ion-button block>Login y Registro &nbsp; <ion-icon name="log-in"></ion-icon></button>
-  <button ion-button block color="dark">Fotos &nbsp; <ion-icon name="photos"></ion-icon></button>
-  <button ion-button block color="secondary">Mapas &nbsp; <ion-icon name="pin"></ion-icon></button>
+  <button ion-button block (click)="loginAndRegister()">Login y Registro &nbsp; <ion-icon name="log-in"></ion-icon></button>
+  <button ion-button block color="dark" (click)="photos()">Fotos &nbsp; <ion-icon name="photos"></ion-icon></button>
+  <button ion-button block color="secondary" (click)="maps()">Mapas &nbsp; <ion-icon name="pin"></ion-icon></button>
 </ion-content>
