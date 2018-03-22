@@ -11,8 +11,12 @@ export class HomePage {
 
   }
 
-  loginAndRegister(){
+  login(){
     alert("Login clicked!");
+  }
+
+  register(){
+    alert("Register clicked!");
   }
 
 
