@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoggedinPage page.
@@ -35,6 +36,15 @@ export class LoggedinPage {
   }
 
   cerrarSesion(){
-    this.showAlert("Cerrando sesion...");
+    //this.showAlert("Cerrando sesion...");
+    this.firebase.auth.signOut()
+    .then(data =>{
+      //console.log("Sesion terminada: ", data);
+      this.navCtrl.setRoot(HomePage);
+      //console.log(this.firebase.auth.currentUser.email);
+    })
+    .catch(error =>{
+      this.showAlert("Error: "+error.message);
+    });
   }
 }
