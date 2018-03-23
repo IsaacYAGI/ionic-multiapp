@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseAuth } from '@firebase/auth-types';
 
@@ -20,7 +20,7 @@ export class RegisterPage {
   @ViewChild('username') username;
   @ViewChild('password') password;
 
-  constructor(private firebase:AngularFireAuth, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private firebase:AngularFireAuth, public alertCtrl: AlertController, public loadingCtrl: LoadingController,  public navCtrl: NavController, public navParams: NavParams) {
     
   }
 
@@ -37,11 +37,21 @@ export class RegisterPage {
   }
 
   registrarUsuario(){
+
+    let loading = this.loadingCtrl.create({
+      content: 'Por favor espere...'
+    });
+
+    loading.present();
+
+
     this.firebase.auth.createUserWithEmailAndPassword(this.username.value,this.password.value)
     .then(data=>{
+      loading.dismiss();
       this.showAlert("Usuario registrado exitosamente!");
     })
     .catch(error =>{
+      loading.dismiss();
       this.showAlert("Error: "+error.message);
     });
     console.log(this.username.value,this.password.value);
