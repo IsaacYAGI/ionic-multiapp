@@ -19,8 +19,9 @@ export class MapviewverPage {
 
   options : GeolocationOptions;
   currentPos : Geoposition;
-  @ViewChild('map') mapElement: ElementRef;
   map: any;
+
+  @ViewChild('map') mapElement: ElementRef;
 
   constructor(private geolocation : Geolocation, public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
   }
