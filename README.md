@@ -39,7 +39,7 @@ Por último:
 * Ejecutar el comando `ionic cordova build android` para compilar el APK.
 * Ejecutar el comando `ionic cordova run android --target=[IP]:[PUERTO]` para compilar el APK y lanzarlo al emulador.
 
-# Creditos
+# Créditos
 
 Se siguieron los siguientes tutoriales para la elaboración de las diferentes partes de la app (¡muchas gracias! :smiley: ) 
 
