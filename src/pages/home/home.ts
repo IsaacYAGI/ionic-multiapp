@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import {RegisterPage} from '../register/register';
 import { LoginPage } from '../login/login';
+import { ImagenviewverPage } from '../imagenviewver/imagenviewver';
 
 @Component({
   selector: 'page-home',
@@ -24,7 +25,7 @@ export class HomePage {
 
 
   photos(){
-    alert("Fotos clicked!");
+    this.navCtrl.push(ImagenviewverPage);
   }
 
 

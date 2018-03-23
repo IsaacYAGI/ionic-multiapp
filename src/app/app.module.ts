@@ -14,6 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
+import { ImagenviewverPage } from '../pages/imagenviewver/imagenviewver';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoggedinPage } from '../pages/loggedin/loggedin';
     HomePage,
     RegisterPage,
     LoginPage,
-    LoggedinPage
+    LoggedinPage,
+    ImagenviewverPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { LoggedinPage } from '../pages/loggedin/loggedin';
     HomePage,
     RegisterPage,
     LoginPage,
-    LoggedinPage
+    LoggedinPage,
+    ImagenviewverPage
   ],
   providers: [
     StatusBar,
