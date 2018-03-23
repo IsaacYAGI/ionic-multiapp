@@ -16,6 +16,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
 import { ImagenviewverPage } from '../pages/imagenviewver/imagenviewver';
+import { MapviewverPage } from '../pages/mapviewver/mapviewver';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ImagenviewverPage } from '../pages/imagenviewver/imagenviewver';
     RegisterPage,
     LoginPage,
     LoggedinPage,
-    ImagenviewverPage
+    ImagenviewverPage,
+    MapviewverPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { ImagenviewverPage } from '../pages/imagenviewver/imagenviewver';
     RegisterPage,
     LoginPage,
     LoggedinPage,
-    ImagenviewverPage
+    ImagenviewverPage,
+    MapviewverPage
   ],
   providers: [
     StatusBar,
