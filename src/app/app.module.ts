@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -14,6 +15,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
+import { ImagenviewverPage } from '../pages/imagenviewver/imagenviewver';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { LoggedinPage } from '../pages/loggedin/loggedin';
     HomePage,
     RegisterPage,
     LoginPage,
-    LoggedinPage
+    LoggedinPage,
+    ImagenviewverPage
   ],
   imports: [
     BrowserModule,
@@ -35,11 +38,13 @@ import { LoggedinPage } from '../pages/loggedin/loggedin';
     HomePage,
     RegisterPage,
     LoginPage,
-    LoggedinPage
+    LoggedinPage,
+    ImagenviewverPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
