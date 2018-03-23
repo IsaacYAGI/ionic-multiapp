@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import {RegisterPage} from '../register/register';
 import { LoginPage } from '../login/login';
 import { ImagenviewverPage } from '../imagenviewver/imagenviewver';
+import { MapviewverPage } from '../mapviewver/mapviewver';
 
 @Component({
   selector: 'page-home',
@@ -30,6 +31,6 @@ export class HomePage {
 
 
   maps(){
-    alert("Mapas clicked!");
+    this.navCtrl.push(MapviewverPage);
   }
 }
