@@ -12,12 +12,16 @@ import { firebaseConfig } from '../environment';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
+import { LoginPage } from '../pages/login/login';
+import { LoggedinPage } from '../pages/loggedin/loggedin';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    LoginPage,
+    LoggedinPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { RegisterPage } from '../pages/register/register';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    LoginPage,
+    LoggedinPage
   ],
   providers: [
     StatusBar,
