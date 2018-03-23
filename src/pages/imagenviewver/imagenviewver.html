@@ -14,9 +14,9 @@
 
 
 <ion-content padding>
-  <button ion-button>Tomar foto &nbsp; <ion-icon name="camera"></ion-icon></button>
+  <button ion-button (click)="takePicture()" >Tomar foto &nbsp; <ion-icon name="camera"></ion-icon></button>
   <button ion-button (click)="openGallery()">Abrir desde galería &nbsp; <ion-icon name="images"></ion-icon></button>
 
   <img src="{{imageSrc}}" alt="">
-  
+
 </ion-content>
