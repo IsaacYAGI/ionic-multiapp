@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 /**
  * Generated class for the ImagenviewverPage page.
@@ -15,11 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ImagenviewverPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private imageSrc: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+    this.imageSrc = "";
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ImagenviewverPage');
+  }
+
+  private openGallery (): void {
+    let cameraOptions = {
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.FILE_URI,      
+      quality: 100,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      encodingType: this.camera.EncodingType.JPEG,      
+      correctOrientation: true
+    }
+  
+    this.camera.getPicture(cameraOptions)
+      .then(file_uri =>{
+        this.imageSrc = file_uri;
+        //alert("Imagen URL: "+ this.imageSrc);
+      },
+      err => alert(err));   
   }
 
 }
