@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 
@@ -19,7 +19,7 @@ export class LoggedinPage {
 
   email : string;
 
-  constructor(private firebase:AngularFireAuth, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private firebase:AngularFireAuth, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
     this.email = firebase.auth.currentUser.email;
   }
 
@@ -36,14 +36,23 @@ export class LoggedinPage {
   }
 
   cerrarSesion(){
+
+    let loading = this.loadingCtrl.create({
+      content: 'Por favor espere...'
+    });
+
+    loading.present();
+
     //this.showAlert("Cerrando sesion...");
     this.firebase.auth.signOut()
     .then(data =>{
+      loading.dismiss();
       //console.log("Sesion terminada: ", data);
       this.navCtrl.setRoot(HomePage);
       //console.log(this.firebase.auth.currentUser.email);
     })
     .catch(error =>{
+      loading.dismiss();
       this.showAlert("Error: "+error.message);
     });
   }
