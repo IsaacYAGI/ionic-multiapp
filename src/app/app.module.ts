@@ -13,13 +13,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
+import { LoggedinPage } from '../pages/loggedin/loggedin';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    LoggedinPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { LoginPage } from '../pages/login/login';
     MyApp,
     HomePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    LoggedinPage
   ],
   providers: [
     StatusBar,
